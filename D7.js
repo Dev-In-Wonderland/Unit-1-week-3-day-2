@@ -364,7 +364,7 @@ const elementoPescato = function (array, id) {
 }
 
 
-console.log("Eserc14: ", elementoPescato(movies, "tt0355702"))
+console.log("Eserc14: ", elementoPescato(movies, "tt0087365"))
 */
 
 const elementoPescato = function (array, id) {
