@@ -8,7 +8,7 @@ function upper(casa, giardino){
   let giardino1 = giardino.slice(5)
   let concat =casa1.concat(giardino1)
   
-    console.log(concat.toLocaleUpperCase())
+    console.log(`Eserc1: `, concat.toLocaleUpperCase())
   }
 
 
@@ -38,7 +38,7 @@ function giveMeRandom (num){
 } 
 const risultatoEser1 = giveMeRandom(10)
 
-console.log(risultatoEser1)
+console.log("Eserc2: ",risultatoEser1)
 
 
 
@@ -49,10 +49,10 @@ console.log(risultatoEser1)
 
 const arraynum2 = [4, 7, 9, 2, 5];
 
-const checkPari = arraynum2.filter((num) => {num % 2 === 0}
-)
+const checkPari = (arraynum2) =>{ return arraynum2.filter (num=>num % 2 === 0)}
 
-console.log(arraynum2)
+
+console.log("Eserc3: ", arraynum2)
 
 
 /* ESERCIZIO 4
@@ -78,7 +78,7 @@ function myFunction(item) {
   sum += item;
 }
 
-console.log("La somma dell' array è: ", sum);
+console.log("Es 4)   La somma dell' array è: ", sum);
 
 /* ESERCIZIO 5
   Scrivi una funzione per sommare i numeri contenuti in un array (usare REDUCE)
@@ -88,7 +88,7 @@ console.log("La somma dell' array è: ", sum);
 
 const arr2 = [5, 6, 7, 8];
 const reducer2 = (accumulator, curr) => accumulator + curr;
-console.log("La somma dell' array è: " , arr2.reduce(reducer2));
+console.log("Es 5)   La somma dell' array è: " , arr2.reduce(reducer2));
 
 
 
@@ -99,7 +99,7 @@ console.log("La somma dell' array è: " , arr2.reduce(reducer2));
 
 
 
-
+console.log("-----------------Eser6---------------------")
 
 
 
@@ -136,111 +136,21 @@ function myFunction3(item) {
 */
 
 
-const novantanove = [1,
-2	,
-3	,
-4	,
-5	,
-6	,
-7	,
-8	,
-9	,
-10,
-11,
-12,
-13,
-14,
-15,
-16,
-17,
-18,
-19,
-20,
-21,
-22,
-23,
-24,
-25,
-26,
-27,
-28,
-29,
-30,
-31,
-32,
-33,
-34,
-35,
-36,
-37,
-38,
-39,
-40,
-41,
-42,
-43,
-44,
-45,
-46,
-47,
-48,
-49,
-50,
-51,
-52,
-53,
-54,
-55,
-56,
-57,
-58,
-59,
-60,
-61,
-62,
-63,
-64,
-65,
-66,
-67,
-68,
-69,
-70,
-71,
-72,
-73,
-74,
-75,
-76,
-77,
-78,
-79,
-80,
-81,
-82,
-83,
-84,
-85,
-86,
-87,
-88,
-89,
-90,
-91,
-92,
-93,
-94,
-95,
-96,
-97,
-98,
-99]
 
 
+const checkDispari = () => {
+  const arrayVuoto = []
+  for (let index = 0; index < 100; index++) {
+    if (index % 2 !== 0) {
+      arrayVuoto.push(index)
+    }
+    
+  }
+  return arrayVuoto
+}
+console.log("Eser9: ",checkDispari())
 
-const checkDispari = novantanove.filter((num) => {num % 2 !== 0})
 
-console.log("Eserc8:",novantanove)
 
 
 /* Questo array di film verrà usato negli esercizi a seguire. Non modificarlo e scorri oltre per riprendere gli esercizi :) */
@@ -358,22 +268,122 @@ const movies = [
   Scrivi una funzione per trovare il film più vecchio nell'array fornito.
 */
 
+
+
+/*
+
+const film = movies.filter(elemento => elemento.Year < 1970)
+
+
+
+   console.log("Eserc10: ",film)
+
+*/
+   
+
+   const theOldestMovie = (array) => {
+     const filtro = array.filter(
+       (elemento) => elemento.Year == Math.min(...movies.map((item) => item.Year))
+     )
+     console.log("Eser10: ",filtro)
+   
+   }
+   
+   theOldestMovie(movies)
+   
+   
+   
+
+
+
 /* ESERCIZIO 11
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
 */
+
+const numerodiFlm = array => { return array.length}
+
+console.log("Eserc11: " ,numerodiFlm("Eserc11: ", movies))
 
 /* ESERCIZIO 12
   Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
 */
 
+
+const titolideiFilm = array => {
+  return array.map(element=>element.Title)
+}
+
+
+
+console.log (`Eserc12: `, titolideiFilm(movies))
+
+
+
+
+
+
+
+
 /* ESERCIZIO 13
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
 */
+
+const filmUscitidopoilDuemila = array => {
+  let result = []
+  for (let index = 0; index < array.length; index++) {
+    if (parseInt(array[index].Year) > 1999){
+      result.push (array[index])
+      
+    }
+    
+  }
+  return result
+
+
+}
+
+
+console.log("Eserc13: ", filmUscitidopoilDuemila(movies))
+
+
+
 
 /* ESERCIZIO 14
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
 
+/*
+const getMoviebyId = function (array, id) {
+  let foundMovie = null
+  for (let index = 0; index < array.length; index++) {
+    if(array[index].imdbID === id) {
+      foundMovie = array[index]
+    }
+  }
+  return foundMovie
+}
+
+
+console.log("Eserc14: ", getMoviebyId(movies, "tt0355702"))
+*/
+
+const elementoPescato = function (array, id) {
+  return array.find(elem => elem.imdbID === id)
+}
+
+
+console.log("Eserc14: ", elementoPescato(movies, "tt0167260"))
+
+
 /* ESERCIZIO 15
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
+
+
+
+const sumAlltheYear = array => {
+  return array.reduce((acc, curr) => acc + parseInt(curr.Year),0)
+}
+
+console.log("----------------------eser15")
+console.log(sumAlltheYear(movies))
