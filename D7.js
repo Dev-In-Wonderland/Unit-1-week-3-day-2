@@ -353,18 +353,18 @@ console.log("Eserc13: ", filmUscitidopoilDuemila(movies))
 */
 
 /*
-const getMoviebyId = function (array, id) {
-  let foundMovie = null
+const elementoPescato = function (array, id) {
+  let pescareFilm = null
   for (let index = 0; index < array.length; index++) {
     if(array[index].imdbID === id) {
-      foundMovie = array[index]
+      pescareFilm = array[index]
     }
   }
-  return foundMovie
+  return pescareFilm
 }
 
 
-console.log("Eserc14: ", getMoviebyId(movies, "tt0355702"))
+console.log("Eserc14: ", elementoPescato(movies, "tt0355702"))
 */
 
 const elementoPescato = function (array, id) {
