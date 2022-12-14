@@ -15,6 +15,15 @@ function upper(casa, giardino){
 
 (upper("casa", "giardino"))
 
+
+
+// const concatString = (str1, str2) => {
+//   return str1.slice(0, 2).concat(str2.slice(str2.length - 3));
+// };
+
+// console.log(concatString("Pippo", "Pluto"));
+
+
 /* ESERCIZIO 2
   Scrivi una funzione che torni un array di 10 elementi; ognuno di essi deve essere un valore random compreso tra 0 e 100 (incluso).
 */
@@ -43,6 +52,25 @@ console.log("Eserc2: ",risultatoEser1)
 
 
 
+
+
+
+// const random10 = () => {
+//   const array = [];
+//   for (let index = 0; index < 10; index++) {
+//     array.push(Math.floor(Math.random() * 101));
+//   }
+//   return array;
+// };
+
+// console.log(random10());
+
+
+
+
+
+
+
 /* ESERCIZIO 3
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici (suggerimento: il metodo filter può aiutare)
 */
@@ -53,6 +81,21 @@ const checkPari = (arraynum2) =>{ return arraynum2.filter (num=>num % 2 === 0)}
 
 
 console.log("Eserc3: ", arraynum2)
+
+
+
+
+
+// const soloPari = array => {
+//   return array.filter(elemento => elemento % 2 === 0);
+// };
+
+// console.log(soloPari([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+
+
+
+
+
 
 
 /* ESERCIZIO 4
@@ -80,6 +123,27 @@ function myFunction(item) {
 
 console.log("Es 4)   La somma dell' array è: ", sum);
 
+
+
+
+
+
+// const sommaNumeri = array => {
+//   let somma = 0;
+//   array.forEach(element => {
+//     somma += element;
+//   });
+//   return somma;
+// };
+
+// console.log(sommaNumeri([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+
+
+
+
+
+
+
 /* ESERCIZIO 5
   Scrivi una funzione per sommare i numeri contenuti in un array (usare REDUCE)
 */
@@ -89,6 +153,21 @@ console.log("Es 4)   La somma dell' array è: ", sum);
 const arr2 = [5, 6, 7, 8];
 const reducer2 = (accumulator, curr) => accumulator + curr;
 console.log("Es 5)   La somma dell' array è: " , arr2.reduce(reducer2));
+
+
+
+
+
+
+// const reduceSommaNumeri = array => {
+//   return array.reduce((acc, curr) => acc + curr, 0);
+// };
+
+// console.log(reduceSommaNumeri([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+
+
+
+
 
 
 
@@ -115,6 +194,21 @@ function myFunction2(item) {
 
 
 
+
+
+// const incrementaArray = (array, n) => {
+//   return array.map(el => el + n);
+// };
+
+// console.log(incrementaArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 10));
+
+
+
+
+
+
+
+
 /* ESERCIZIO 8
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
   es.: ["EPICODE", "is", "great"] => [7, 2, 5]
@@ -130,6 +224,25 @@ arraystring.forEach(myFunction3);
 function myFunction3(item) {
    console.log(item.length);
 }
+
+
+
+
+
+
+// const lunghezze = array => {
+//   return array.map(elem => elem.length);
+// };
+
+// console.log(lunghezze(["EPICODE", "is", "great"]));
+
+
+
+
+
+
+
+
 
 /* ESERCIZIO 9
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
@@ -149,6 +262,28 @@ const checkDispari = () => {
   return arrayVuoto
 }
 console.log("Eser9: ",checkDispari())
+
+
+
+
+
+
+
+
+
+// const oddOnly = () => {
+//   const array = [];
+//   for (let i = 0; i < 100; i++) {
+//     if (i % 2 !== 0) {
+//       array.push(i);
+//     }
+//   }
+//   return array;
+// };
+
+//  console.log(oddOnly());
+
+
 
 
 
@@ -281,18 +416,60 @@ const film = movies.filter(elemento => elemento.Year < 1970)
 */
    
 
-   const theOldestMovie = (array) => {
-     const filtro = array.filter(
-       (elemento) => elemento.Year == Math.min(...movies.map((item) => item.Year))
-     )
-     console.log("Eser10: ",filtro)
+  //  const theOldestMovie = (array) => {
+  //    const filtro = array.filter(
+  //      (elemento) => elemento.Year == Math.min(...movies.map((item) => item.Year))
+  //    )
+  //    console.log("Eser10: ",filtro)
    
-   }
+  //  }
    
-   theOldestMovie(movies)
+  //  theOldestMovie(movies)
    
    
    
+
+
+
+
+
+  //  const oldestMovie = array => {
+  //   let result = { Year: 2100 };
+  //   for (let i = 0; i < array.length; i++) {
+  //     let currentYear = parseInt(array[i].Year);
+  //     if (currentYear < result.Year) {
+  //       result = array[i];
+  //     }
+  //   }
+  
+  //   return result;
+  // };
+  
+  // console.log(oldestMovie(movies));
+
+
+
+
+ const piùVecchio = (array) => {
+  let filmPiùVecchio = array[0]
+
+  array.forEach(element => {
+    if (parseInt(filmPiùVecchio.Year) > parseInt(element.Year)) {
+      filmPiùVecchio = element
+      
+    }
+  })
+    return filmPiùVecchio
+  }
+ 
+console.log("Eser10: ", piùVecchio(movies))
+
+
+
+
+
+ 
+
 
 
 
@@ -303,6 +480,16 @@ const film = movies.filter(elemento => elemento.Year < 1970)
 const numerodiFlm = array => { return array.length}
 
 console.log("Eserc11: " ,numerodiFlm("Eserc11: ", movies))
+
+
+
+// const countMovies = array => {
+//   return array.length;
+// };
+
+// console.log(countMovies(movies));
+
+
 
 /* ESERCIZIO 12
   Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
@@ -321,6 +508,11 @@ console.log (`Eserc12: `, titolideiFilm(movies))
 
 
 
+// const onlyTitles = array => {
+//   return array.map(elem => elem.Title);
+// };
+
+// console.log(onlyTitles(movies));
 
 
 
@@ -344,6 +536,38 @@ const filmUscitidopoilDuemila = array => {
 
 
 console.log("Eserc13: ", filmUscitidopoilDuemila(movies))
+
+
+
+
+
+
+
+
+
+
+// const onlyInThisMillennium = array => {
+//   let result = [];
+//   for (let i = 0; i < array.length; i++) {
+//     if (parseInt(array[i].Year) > 1999) {
+//       result.push(array[i]);
+//     }
+//   }
+//   return result;
+// };
+
+
+
+
+
+
+//oppure
+/* const onlyInThisMillennium = array => {
+  return array.filter(elem => parseInt(elem.Year) > 1999)
+} */
+
+
+
 
 
 
@@ -375,6 +599,40 @@ const elementoPescato = function (array, id) {
 console.log("Eserc14: ", elementoPescato(movies, "tt0167260"))
 
 
+
+
+
+
+
+
+
+
+
+
+// const getMovieById = function (array, id) {
+//   let foundMovie = null;
+//   for (let i = 0; i < array.length; i++) {
+//     if (array[i].imdbID === id) {
+//       foundMovie = array[i];
+//     }
+//   }
+//   return foundMovie;
+// };
+
+// //OPPURE
+// /* const getMovieById = function (array, id) {
+//   return array.find(elem => elem.imdbID === id)
+// }*/
+
+// console.log(getMovieById(movies, "tt0355702"));
+
+
+
+
+
+
+
+
 /* ESERCIZIO 15
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
@@ -387,3 +645,35 @@ const sumAlltheYear = array => {
 
 console.log("----------------------eser15")
 console.log(sumAlltheYear(movies))
+
+
+
+
+
+
+
+
+
+// const sumAllTheYears = array => {
+//   let result = 0;
+//   for (let i = 0; i < array.length; i++) {
+//     result += parseInt(array[i].Year);
+//   }
+//   return result;
+// };
+
+// // OPPURE
+
+// /* const sumAllTheYears = array => {
+//   return array.reduce((acc, curr) => acc + parseInt(curr.Year), 0)
+// }*/
+
+// console.log(sumAllTheYears(movies));
+
+
+
+
+
+
+
+
